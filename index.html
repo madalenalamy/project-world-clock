@@ -11,12 +11,13 @@
 <body>
     <div class="container">
     <h1>World Clock</h1>
-    <select>
+    <select id ="city">
         <option value="">select a city</option>
-        <option value="">New York</option>
-        <option value="">Tokyo</option>
-        <option value="">Sydney</option>
+        <option value="America/New_York">New York</option>
+        <option value="Asia/Tokyo">Tokyo</option>
+        <option value="Australia/Sydney">Sydney</option>
         </select>
+        <div id="cities">
         <div class="city" id="los-angeles">
             <h2>Los Angeles</h2>
             <div class="date"></div>
@@ -28,6 +29,7 @@
             <div class="time"></div> 
         </div>
         </div>
+    </div>  
     <footer>This project was coded with ❤️ by <strong>Madalena Lamy</strong> and is open sourced on <a href="https://github.com/madalena-lamy" target="_blank">GitHub</a>.
     </footer>
     <script src="javascript/index.js"></script>

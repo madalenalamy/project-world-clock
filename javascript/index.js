@@ -23,3 +23,20 @@ losAngelesTimeElement.innerHTML = `${losAngelesTime.format("h:mm:ss[<small>]A[</
 
 updateTime();
 setInterval(updateTime, 1000);  
+
+function updateCity(event) {
+  let cityTimeZone = event.target.value;
+  let cityTime = moment().tz(cityTimeZone);
+  let citiesElement = document.querySelector("#cities");
+  citiesElement.innerHTML = `
+  <div class="city">
+    <h2>${cityTimeZone.replace("_", " ").split("/")[1]}</h2>
+    <div class="date">${cityTime.format("Do MMMM YYYY")}</div>
+    <div class="time">${cityTime.format("h:mm:ss")}<small>${cityTime.format("A")}</small></div>
+  </div>
+  `;    
+}
+
+
+let citiesSelectElement = document.querySelector("#city");
+citiesSelectElement.addEventListener("change", updateCity);
